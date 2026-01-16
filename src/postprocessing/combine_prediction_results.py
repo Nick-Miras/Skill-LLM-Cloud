@@ -162,14 +162,11 @@ class Evaluation:
                 for skill_type in prediction:
                     skill_list = prediction[skill_type]
                     for skill in skill_list:
-                        if isinstance(skill, str):
-                            skill_span = skill
-                            context = skill
-                        elif isinstance(skill, dict):
-                            skill_span = skill.get('skill_span', '')
-                            context = skill.get('context', skill_span)
+                        skill_span = skill['skill_span']
+                        if 'context' in skill:
+                            context = skill['context']
                         else:
-                            continue  # Skip invalid data
+                            context = skill['skill_span']
 
                         best_match, best_start, best_end = self.find_best_match(clean_text, skill_span, context)
                         if best_match is not None:
