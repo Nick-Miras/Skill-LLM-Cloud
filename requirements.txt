@@ -13,3 +13,5 @@ jieba==0.42.1
 nltk==3.9.1
 rouge_chinese==1.0.3
 python-Levenshtein==0.25.1
+peft==0.11.1
+transformers==4.41.2
