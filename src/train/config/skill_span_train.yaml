@@ -18,7 +18,6 @@ cutoff_len: 2000
 max_samples: 100000
 overwrite_cache: true
 preprocessing_num_workers: 16
-packing: true
 
 ### output
 output_dir: saves/Meta-Llama-3-8B-Instruct/lora/sft
