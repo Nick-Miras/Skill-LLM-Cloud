@@ -1,3 +1,6 @@
 .DS_Store
 saves/
 .idea/
+saves/
+!saves/Meta-Llama-3-8B-Instruct/lora/results/generated_predictions.jsonl
+!saves/Meta-Llama-3-8B-Instruct/lora/results/processed_predictions.jsonl
