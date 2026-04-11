@@ -59,27 +59,26 @@ resource "aws_instance" "llm_training_instance" {
       chmod -R 755 src
 
       sudo -u ubuntu bash << 'EOU'
-
-          # Load the variables or set path again because we are in a new shell
-          WORKING_DIR="/opt/dlami/nvme"
-          cd "$WORKING_DIR/thesis"
-          
-          touch installation_log.txt
-          
-          # --- Fix for EXTERNALLY MANAGED ENVIRONMENT ---
-          # You must create the venv AND activate it within this block.
-          # When the venv is active, pip checks get bypassed.
-          
-          echo "Creating virtual environment..."
-          python3 -m venv .venv
-          
-          echo "Activating virtual environment..."
-          source .venv/bin/activate
-          
-          echo "Installing dependencies..."
-          # Now that venv is active, pip will install into .venv/lib 
-          # and not conflict with the system python.
-          pip install -r requirements.txt > installation_log.txt 2>&1
+        # Load the variables or set path again because we are in a new shell
+        WORKING_DIR="/opt/dlami/nvme"
+        cd "$WORKING_DIR/thesis"
+        
+        touch installation_log.txt
+        
+        # --- Fix for EXTERNALLY MANAGED ENVIRONMENT ---
+        # You must create the venv AND activate it within this block.
+        # When the venv is active, pip checks get bypassed.
+        
+        echo "Creating virtual environment..."
+        python3 -m venv .venv
+        
+        echo "Activating virtual environment..."
+        source .venv/bin/activate
+        
+        echo "Installing dependencies..."
+        # Now that venv is active, pip will install into .venv/lib 
+        # and not conflict with the system python.
+        pip install -r requirements.txt > installation_log.txt 2>&1
       EOU
     EOF
 }
