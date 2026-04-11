@@ -143,5 +143,3 @@ dependencies:
       - ucimlrepo==0.0.7
       - umap-learn==0.5.7
       - CurrencyConverter==0.18.15
- 
-prefix: /Users/nickanthonymiras/miniconda3/envs/datascience
