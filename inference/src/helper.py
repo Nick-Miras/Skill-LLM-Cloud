@@ -1,7 +1,9 @@
 from currency_converter import CurrencyConverter
 from datetime import date
 
+
 REFERENCE_DATE = date(2025, 1, 2)  # Set a reference date for currency conversion
+
 
 def convert_to_usd(row, column_name, reference_date=REFERENCE_DATE):
     c = CurrencyConverter()
